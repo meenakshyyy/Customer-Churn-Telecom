@@ -1,6 +1,6 @@
 # Customer-Churn-Telecom
 
-(Customer Churn Deployment )[https://customer-churn-telecom.streamlit.app/]
+[Customer Churn Deployment ](https://customer-churn-telecom.streamlit.app/)
 
 ## Abstarct
 ### Customer churn is the number of customers who stop using a company's products or services over a given period of time. Customers in the telecom industry can choose from a variety of service providers and actively switch from one to the next.Customers are the most important resources for any companies or businessed. What if these customers leave the company due to high charges, better compititor offers, poor customer services or something unknown, which indirectyly shows company's performance. Hence, Customer churn is one of the important metrics for companies to evaluate their performance.  This data science project aims to predict customer churn by analyzing behavioral, demographic, and transactional data using machine learning techniques.
