@@ -32,7 +32,7 @@ def main():
     with st.form("my_form"):
     # Create input fields for user input inside form
     
-        st.write("Select the demographic details of the customer")
+        st.write("Select the Demographic Details")
         gender = st.selectbox("Gender", ["Male", "Female"])
 
         senior_citizen = st.selectbox("Senior Citizen", [0, 1])
@@ -40,7 +40,7 @@ def main():
         partner = st.selectbox("Partner",["Yes", "No"] )
         dependents = st.selectbox("Dependents", ["Yes", "No"])
 
-        st.write("Select the dservicees used")
+        st.write("Select the Servicees Used")
         phone_service = st.selectbox("Phone Service", ["No","Yes","No phone service"])
         multiple_lines = st.selectbox("Multiple Lines", ["Yes", "No","No internet service"])
         internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No internet service"])
