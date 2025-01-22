@@ -3,9 +3,7 @@ import pandas as pd
 import pickle
 
 # Load the Random Forest model from the pickle file
-model_file_path=model.pkl
-with open(model_file_path, 'rb') as model_file:
-    model = pickle.load(model_file)
+model = pickle.load(open('model.pkl', 'rb'))
 
 columns =["Gender", "SeniorCitizen","Partner","Dependents","PhoneService","MultipleLines", "InternetServiceType", "OnlineSecurity", "OnlineBackup", 
                          "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies", "ContractType",  "PaperlessBilling",
