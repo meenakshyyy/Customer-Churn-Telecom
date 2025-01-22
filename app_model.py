@@ -29,33 +29,36 @@ def predict_churn(input_data):
 def main():
     st.title("Telecom Churn Prediction")
     st.write("Enter the customer details below to predict churn.")
-
-    # Create input fields for user input
-    tenure = st.number_input("Tenure (months)")
-    phone_service = st.selectbox("Phone Service", ["No","Yes","No phone service"])
-    contract = st.selectbox("Contract",["One year" ,"Two year" ,"Month-to-month"] )
-    paperless_billing = st.selectbox("Paperless Billing", ["No"," Yes"])
-    payment_method = st.selectbox("Payment Method", [ "Bank transfer (automatic)", "Credit card (automatic)", "Electronic check","Mailed check"])
-    monthly_charges = st.number_input("Monthly Charges")
-    device_protection = st.selectbox("Device Protection", ["Yes", "No","No internet service"])
-    tech_support = st.selectbox("Tech Support", ["Yes", "No","No internet service"])
-    streaming_tv = st.selectbox("Streaming TV", ["Yes", "No","No internet service"])
-    streaming_movies = st.selectbox("Streaming Movies", ["Yes", "No","No internet service"])
+    with st.form("my_form"):
+    # Create input fields for user input inside form
     
+        st.write("Select the demographic details of the customer")
+        gender = st.selectbox("Gender", ["Male", "Female"])
 
-    gender = st.selectbox("Gender", ["Male", "Female"])
-    st.write("Select the gender of the customer")
+        senior_citizen = st.selectbox("Senior Citizen", [0, 1])
 
-    senior_citizen = st.selectbox("Senior Citizen", [0, 1])
+        partner = st.selectbox("Partner",["Yes", "No"] )
+        dependents = st.selectbox("Dependents", ["Yes", "No"])
 
-    partner = st.selectbox("Partner",["Yes", "No"] )
-    dependents = st.selectbox("Dependents", ["Yes", "No"])
+        st.write("Select the dservicees used")
+        phone_service = st.selectbox("Phone Service", ["No","Yes","No phone service"])
+        multiple_lines = st.selectbox("Multiple Lines", ["Yes", "No","No internet service"])
+        internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No internet service"])
+        online_security = st.selectbox("Online Security", ["Yes", "No","No internet service"])
+        online_backup = st.selectbox("Online Backup", ["Yes", "No","No internet service"])
+        device_protection = st.selectbox("Device Protection", ["Yes", "No","No internet service"])
+        tech_support = st.selectbox("Tech Support", ["Yes", "No","No internet service"])
+        streaming_tv = st.selectbox("Streaming TV", ["Yes", "No","No internet service"])
+        streaming_movies = st.selectbox("Streaming Movies", ["Yes", "No","No internet service"])
 
-    multiple_lines = st.selectbox("Multiple Lines", ["Yes", "No","No internet service"])
-    internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No internet service"])
-    online_security = st.selectbox("Online Security", ["Yes", "No","No internet service"])
-    online_backup = st.selectbox("Online Backup", ["Yes", "No","No internet service"])
-    total_charges=st.number_input("Total Charges")
+        st.write("Subscription Details")
+        tenure = st.number_input("Tenure (months)")
+        contract = st.selectbox("Contract",["One year" ,"Two year" ,"Month-to-month"] )
+        paperless_billing = st.selectbox("Paperless Billing", ["No"," Yes"])
+        payment_method = st.selectbox("Payment Method", [ "Bank transfer (automatic)", "Credit card (automatic)", "Electronic check","Mailed check"])
+        monthly_charges = st.number_input("Monthly Charges")
+        total_charges=st.number_input("Total Charges")
+        button=st.form_submit_button()
     # Create a dictionary to store the user input
     input_data = {
         'Gender': gender,
@@ -78,21 +81,21 @@ def main():
         'MonthlyCharges':monthly_charges,
         'TotalCharges':total_charges
 }
-    
-    # Predict churn based on user input
-    churn_probability = predict_churn(input_data)
-    churn_prediction=churn_probability[1]
-    # Display the prediction
-    st.subheader("Churn Prediction")
-    if churn_prediction >= 0.4:
-        st.write("The customer is likely to churn.")
-    else:
-        st.write("The customer is unlikely to churn.")
+    if button:
+        # Predict churn based on user input
+        churn_probability = predict_churn(input_data)
+        churn_prediction=churn_probability[1]
+        # Display the prediction
+        st.subheader("Churn Prediction")
+        if churn_prediction >= 0.4:
+            st.write("The customer is likely to churn.")
+        else:
+            st.write("The customer is unlikely to churn.")
 
-    # Display the churn probability
-    st.subheader("Churn Probability")
+        # Display the churn probability
+        st.subheader("Churn Probability")
 
-    st.write("The probability of churn is:", churn_probability)
+        st.write("The probability of churn is:", churn_probability)
 
 
 # Run the Streamlit app
