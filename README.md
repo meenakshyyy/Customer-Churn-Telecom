@@ -55,7 +55,7 @@ The project is implemented using **Python** and leverages the following librarie
 First, clone the GitHub repository to your local system using:
 ```bash
 git clone https://github.com/meenakshyyy/Customer-Churn-Telecom.git
-cd customer-churn-prediction
+cd Customer-Churn-Telecom
 ```
 
 ### 2️⃣ Install Dependencies
@@ -74,7 +74,7 @@ If you want to explore the dataset and train models interactively, launch Jupyte
 ```bash
 jupyter notebook
 ```
-Then, open the notebook file (`customer_churn_analysis.ipynb`) and run the cells step by step.
+Then, open the notebook file (`Customer churn.ipynb`) and run the cells step by step.
 
 ### 4️⃣ Running the Streamlit Web App
 If the project includes a **Streamlit-based web app**, you can launch it using:
@@ -95,4 +95,10 @@ We tested multiple machine learning models for churn prediction, and the results
 - **Hyperparameter Tuned XGBoost**: 79% accuracy
 
 With further training and processing, the model can achieve even better performance.
+
+---
+
+## Conclusion
+This project demonstrates the power of machine learning in predicting customer churn in the telecom industry. By leveraging customer data, we can identify at-risk customers and help businesses take proactive measures to retain them. While the models show promising results, further **feature engineering, data preprocessing, and hyperparameter tuning** could improve accuracy. Future enhancements may include **deep learning approaches**, **real-time prediction systems**, and **more advanced ensemble models** to refine churn prediction and improve customer retention strategies.
+
 
