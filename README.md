@@ -2,8 +2,6 @@
 
 [Customer Churn Deployment ](https://customer-churn-telecom-app.streamlit.app/)
 
-# Customer Churn Prediction - Telecom Industry
-
 ## Project Overview
 This project is a **machine learning-based solution** designed to predict customer churn in the **telecom industry**. By analyzing various customer attributes, such as **services subscribed, account details, and demographics**, the model helps identify customers at risk of leaving. The goal is to enable telecom companies to take proactive retention measures, improving customer satisfaction and reducing revenue loss.  
 
@@ -56,7 +54,7 @@ The project is implemented using **Python** and leverages the following librarie
 ### 1️⃣ Clone the Repository
 First, clone the GitHub repository to your local system using:
 ```bash
-git clone <repository_link>
+git clone https://github.com/meenakshyyy/Customer-Churn-Telecom.git
 cd customer-churn-prediction
 ```
 
@@ -81,8 +79,20 @@ Then, open the notebook file (`customer_churn_analysis.ipynb`) and run the cells
 ### 4️⃣ Running the Streamlit Web App
 If the project includes a **Streamlit-based web app**, you can launch it using:
 ```bash
-streamlit run app.py
+streamlit run app_model.py
 ```
 This will start a web-based interface where you can **upload new customer data** and get churn predictions.
 
 ---
+
+## Model Performance & Results
+We tested multiple machine learning models for churn prediction, and the results are as follows:
+
+- **Logistic Regression**: 79% accuracy
+- **Decision Tree**: 79% accuracy
+- **Random Forest**: 79% accuracy
+- **XGBoost**: 80% accuracy
+- **Hyperparameter Tuned XGBoost**: 79% accuracy
+
+With further training and processing, the model can achieve even better performance.
+
